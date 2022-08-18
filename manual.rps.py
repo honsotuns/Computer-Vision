@@ -3,29 +3,24 @@ import random
 
 class RockPaper:
 
-    def __init__(self, get_computer_choice, get_user_choice, get_winner, game ):
-       self.get_computer_choice = get_computer_choice 
-       self.get_user_choice = get_user_choice
-       set.get_winner = get_winner
-       self.game = game
-
-
-    def get_computer_choice(self, computer_choice):
-        self.computer_choice = random.choice(computer_choice)
-        self.get_user_choice()
-    
-
-    def get_user_choice(self, user_choice):
-        self.get_user_choice = input (" Please choose Rock, Paper, or Scissors ").lower()
-        if self.user_choice not in self.game:
-            print (" Kindly choose among the options")
-        else:
-            self.get_winner()
-    
-def get_winner(self, get_winner):
-
-        print(f" You've chosen {self.get_user_choice}. The computer chose {self.computer_choice} ")
+    def __init__(self):
+        self.choices = [' rock', 'paper', 'scissors']
         
+
+    def get_computer_choice(self):
+        computer_choice = random.choice(self.choices)
+        return computer_choice
+    
+
+    def get_user_choice(self):
+        user_choice = input(" Please choose Rock, Paper, or Scissors ").lower()
+        return user_choice 
+           
+        
+    def get_winner(self, computer_choice, user_choice):
+
+        print(f" You've chosen {self.user_choice}. The computer chose {self.computer_choice} ")
+            
         if self.computer_choice  == 'rock':
             if self.user_choice == 'paper':
                 print(' Congratulations, you won ')
@@ -49,15 +44,18 @@ def get_winner(self, get_winner):
                 print(" it's a draw")
             else:
                 print('You lost the game')
-    
-    #def play(self, play, game):
-       # self.play(game)
 
-                
+
+def play_game(self, get_winner):
+    play_game = RockPaper()
+    self.computer_choice(get_winner)
+    self.user_choice(get_winner)
+    self.get_winner()
+    #class # how to instantiate the class, define computer choice and user choice. call the get winner function
+
+            
 if __name__ == '__main__':
-    game_list = [' rock', 'paper', 'scissors' ]
-    get_winner(game_list)
-    
+    play_game
     
 
 
