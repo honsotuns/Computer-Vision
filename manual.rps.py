@@ -1,66 +1,53 @@
 
 import random
 
-class RockPaper:
+class RPS:
 
-    def __init__(self):
-        self.choices = [' rock', 'paper', 'scissors']
-        
-
-    def get_computer_choice(self):
-        computer_choice = random.choice(self.choices)
-        return computer_choice
-    
+    def __init__(self, choices_list):
+        self.choices_list = choices_list
 
     def get_user_choice(self):
-        user_choice = input(" Please choose Rock, Paper, or Scissors ").lower()
-        return user_choice 
-           
-        
-    def get_winner(self, computer_choice, user_choice):
+        user_choice = input("Kindly enter your choice: ")
+        user_choice = user_choice.lower()
+        if user_choice not in choices_list:
+             print("Please enter a valid choice")
 
-        print(f" You've chosen {self.user_choice}. The computer chose {self.computer_choice} ")
+        elif user_choice in choices_list:
+             print("Computer will make its choice")
+        return user_choice
+
+    def get_computer_choice(self):
+        computer_choice = random.choice(choices_list)
+        return computer_choice
+    
+    def get_winner(self, user_choice, computer_choice):
+        if user_choice == computer_choice:
+            print(f" Its a draw, lets go again! The computer chose {computer_choice}. Same as you!")
+
+        elif user_choice == "rock" and computer_choice == "paper":
+            print(f"You lost! The computer picked {computer_choice}") 
+        
+        elif user_choice == "paper" and computer_choice == "scissors":
+            print(f" You lost! The computer picked {computer_choice}")         
+
+        elif user_choice == "scissors" and computer_choice == "rock":
+            print(f" You lost! The computer picked {computer_choice}") 
+
+        elif user_choice == "rock" and computer_choice == "scissors":
+            print(f" You won! The computer picked {computer_choice}") 
+        
+        elif user_choice == "paper" and computer_choice == "rock":
+            print(f" You won! The computer picked {computer_choice}")         
+
+        elif user_choice == "scissors" and computer_choice == "paper":
+            print(f" You won! the computer picked {computer_choice}")
             
-        if self.computer_choice  == 'rock':
-            if self.user_choice == 'paper':
-                print(' Congratulations, you won ')
-            elif self.user_choice == 'rock':
-                print("It's a draw, go again")
-            else:
-                print( 'You lost')
-        
-        if self.computer_choice == 'paper':
-            if self.user_choice == 'scissors':
-                print(' Congratulations, you won')
-            elif self.user_choice == 'paper':
-                print("it's a draw, go again ")
-            else:
-                print(' You lost')
-        
-        if self.computer_choice == 'scissors':
-            if self.user_choice == 'rock':
-                print(' Congratulations, you won') # I dont really know much about the games's rules, i just used my initiative
-            elif self.user_choice == 'scissors':
-                print(" it's a draw")
-            else:
-                print('You lost the game')
+def play_game(choices_list):
+    game = RPS(choices_list)
+    user_choice = game.get_user_choice()
+    computer_choice = game.get_computer_choice()
+    game.get_winner(user_choice, computer_choice)
 
-
-def play_game(self, get_winner):
-    play_game = RockPaper()
-    self.computer_choice(get_winner)
-    self.user_choice(get_winner)
-    self.get_winner()
-    #class # how to instantiate the class, define computer choice and user choice. call the get winner function
-
-            
 if __name__ == '__main__':
-    play_game
-    
-
-
-            
-
-
-
-    
+    choices_list = ['rock', 'paper', 'scissors']
+    play_game(choices_list)
