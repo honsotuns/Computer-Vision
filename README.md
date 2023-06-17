@@ -34,3 +34,6 @@ A PYTHON PROGRAM THAT PLAYS THE CLASSIC GAME OF ROCK, PAPER, SCISSORS
 Using the camera to play Rock-Paper-Scissors game
 * The hard-coded user guess is replaced with the output of the computer vision model. A new file is created called camera_rps.py where the codes were written
 * Game is repeated until either a player gets 3 wins or the computer gets 3 wins
+
+ 
+   * To run: python camera_rps.py 
