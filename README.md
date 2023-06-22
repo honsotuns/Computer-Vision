@@ -1,5 +1,8 @@
 # Computer-vision
-A PYTHON PROGRAM THAT PLAYS THE CLASSIC GAME OF ROCK, PAPER, SCISSORS 
+Computer Vision Rock-Paper-Scissors (RPS) project, which trained a computer vision model using Teachable-Machine. The model detects whether the user shows Rock, Paper, or Scissors to the camera, so the user can leverage that output to play an RPS game with the computer.
+* Trained a computer vision model that detected gestures in real-time.
+* Created a Python script to apply the programming logic using the Tensorflow API and OpenCV
+
 
  1:
 * Setting up the environment
